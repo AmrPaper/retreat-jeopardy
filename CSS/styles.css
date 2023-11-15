@@ -1,0 +1,36 @@
+.board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.game-board {
+    display: grid;
+    grid-template-rows: repeat(6, auto);
+    grid-template-columns: repeat(5, minmax(100px, 1fr));
+    grid-gap: 10px;
+    padding: 20px;
+    border: 2px solid #333;
+    /*width: 50%;
+    height: 50%;*/
+}
+
+.category, .question {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.question {
+    background-color: #4c86af;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .game-board {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        grid-gap: 5px;
+    }
+}
