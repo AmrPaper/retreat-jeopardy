@@ -1,5 +1,6 @@
 {
     "value": 100,
+    "category": "Server",
     "text": "What is our server's name?",
     "ans": "Autist Retreat"
 }
