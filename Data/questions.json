@@ -1,6 +1,9 @@
 {
-    "value": 100,
-    "category": "Server",
-    "text": "What is our server's name?",
-    "ans": "Autist Retreat"
+    "Server": {
+        "100": {"text": "What is our server's name?", "answer": "Autist Retreat"},
+        "200": {"text": "Who are the current event champions?", "answer": "Ceja and AFK"},
+        "300": {"text": "Which year was our server created in?", "answer": "2017"},
+        "400": {"text": "Who was the first person to recieve the Shrek role?", "answer": "Basheer"},
+        "500": {"text": "Who is the one and only current holder of the Ben 10 role?", "answer": "Lex"}
+    }
 }
