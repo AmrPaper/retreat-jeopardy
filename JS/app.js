@@ -1,7 +1,12 @@
+let userScore = 0;
+let questionValue = 0;
+
+///const score = document.querySelector(".score");
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const cls = document.querySelector(".cls");
 const question = document.querySelectorAll(".question");
+const btns = document.querySelectorAll(".btn");
 
 const temp = () => {
     document.getElementById("questionInfo").innerHTML = `Question not found for the specified category and value.`;
@@ -9,9 +14,24 @@ const temp = () => {
     overlay.classList.remove("hidden");
 }
 
+const modifyScore = (target) => {
+    const targetStyle = target.currentTarget.classList;
+    if (targetStyle.contains("add")) {
+        userScore+=questionValue;
+        console.log("Score:",userScore);
+    } else if (targetStyle.contains("subtract")) {
+        userScore-=questionValue;
+        console.log("Score:",userScore);
+    } else {
+        console.log("Score:",userScore);
+    };
+
+};
+
 const questionBox = (event) => {
     let currentCategory = event.currentTarget.dataset.category;
     let currentValue = event.currentTarget.dataset.value;
+    questionValue = Number(currentValue);
 
     fetch("/Data/questions.json")
     .then(response => response.json())
@@ -48,3 +68,6 @@ question.forEach(questionElement => {
 overlay.addEventListener("click", back);
 cls.addEventListener("click", back);
 
+btns.forEach(item => {
+    item.addEventListener("click", modifyScore);
+})
